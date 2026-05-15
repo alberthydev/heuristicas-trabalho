@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Gestão de Frequência - Protótipo</title>
+    <style>
+        body { font-family: sans-serif; padding: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+        th, td { border: 1px solid #000; padding: 10px; text-align: left; }
+        .controles { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+
+    <h1>Monitoramento de Alunos</h1>
+    
+    <div class="controles">
+        <input type="text" id="nomeAluno" placeholder="Nome do Aluno">
+        <button onclick="adicionarAluno()">Adicionar Aluno</button>
+    </div>
+
+    <table id="tabelaAlunos">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Faltas</th>
+                <th>Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+
+    <script>
+        let alunos = [
+            { id: 1, nome: "Hygor Albert", faltas: 2 },
+            { id: 2, nome: "Aluna Fictícia A", faltas: 5 }
+        ];
+
+        function renderizar() {
+            const corpoTabela = document.querySelector("#tabelaAlunos tbody");
+            corpoTabela.innerHTML = "";
+            
+            alunos.forEach(aluno => {
+                const linha = `<tr>
+                    <td>${aluno.nome}</td>
+                    <td>${aluno.faltas}</td>
+                    <td>
+                        <button onclick="marcarFalta(${aluno.id})">Registrar Falta</button>
+                        <button onclick="removerAluno(${aluno.id})">Remover</button>
+                    </td>
+                </tr>`;
+                corpoTabela.innerHTML += linha;
+            });
+        }
+
+        function adicionarAluno() {
+            const nome = document.getElementById("nomeAluno").value;
+            if(nome) {
+                alunos.push({ id: Date.now(), nome: nome, faltas: 0 });
+                document.getElementById("nomeAluno").value = "";
+                renderizar();
+            }
+        }
+
+        function marcarFalta(id) {
+            const aluno = alunos.find(a => a.id === id);
+            aluno.faltas++;
+            renderizar();
+        }
+
+        function removerAluno(id) {
+            alunos = alunos.filter(a => a.id !== id);
+            renderizar();
+        }
+
+        renderizar();
+    </script>
+</body>
+</html>
