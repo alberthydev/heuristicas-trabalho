@@ -91,7 +91,6 @@ Embora o sistema cumprisse o requisito técnico de armazenar a informação, a a
     frequentemente citado na literatura de interfaces educacionais.
 \end{itemize}
 
-% Local reservado para a imagem do protótipo inicial
 \begin{figure}[ht]
 \centering
 \caption{Interface inicial sem aplicação de heurísticas.}
@@ -101,5 +100,44 @@ Embora o sistema cumprisse o requisito técnico de armazenar a informação, a a
 Esta versão inicial serviu como prova de conceito de que a funcionalidade isolada não é suficiente para uma gestão eficiente. 
 A falta de usabilidade neste estágio confirmou que sistemas que não auxiliam o usuário na interpretação de problemas de interação e 
 dados acabam por dificultar o alcance dos objetivos pedagógicos.
+
+\section{Evolução e Aplicação das Heurísticas}
+
+A segunda iteração do sistema transita de um simples repositório de dados para uma plataforma de gestão diagnóstica. 
+A reestruturação foi fundamentada em cinco heurísticas principais de Nielsen, focadas em transformar a experiência do 
+gestor através de inteligência visual e redução da carga cognitiva.
+
+\subsection{Visibilidade do Status do Sistema e Estética Minimalista}
+Para garantir que o usuário esteja sempre informado sobre o estado dos dados, implementou-se um sistema de \textit{Status Badges} 
+coloridas na tabela principal. Alunos com baixo índice de faltas recebem o selo verde ("Estável"), enquanto aqueles que ultrapassam 
+o limite crítico recebem o selo vermelho ("Alerta"). Esta sinalização visual imediata permite que o gestor identifique prioridades sem 
+a necessidade de processar numericamente cada linha, respeitando a estética minimalista ao destacar apenas informações acionáveis\cite{nielsen, antonino}.
+
+\subsection{Reconhecimento em vez de Recordação}
+Esta heurística foi aplicada através do desenvolvimento de um \textit{Dashboard} de métricas no topo da interface. 
+No protótipo inicial, o gestor precisava percorrer toda a lista para "recordar" ou calcular quais eram os pontos críticos de evasão. 
+Na versão evoluída, o sistema processa os dados e apresenta ativamente três indicadores fundamentais:
+\begin{itemize}
+    \item \textbf{Dia mais crítico}: Identifica o dia da semana com maior volume de faltas.
+    \item \textbf{Matéria com mais faltas}: Aponta a disciplina que exige intervenção pedagógica.
+    \item \textbf{Aluno em Risco}: Destaca o estudante com maior número de ausências.
+\end{itemize}
+
+\subsection{Prevenção de Erros e Controle do Usuário}
+Seguindo as observações de \cite{antonino} sobre a importância de o sistema auxiliar na correção de erros, 
+implementou-se uma camada de confirmação para ações destrutivas\cite{rocha}. O botão de exclusão de registros 
+agora dispara um diálogo de segurança, garantindo que o usuário tenha liberdade para desfazer inserções incorretas, 
+mas prevenindo a perda acidental de dados críticos por cliques imprecisos.
+
+\subsection{Correspondência entre o Sistema e o Mundo Real}
+A terminologia técnica foi substituída por conceitos familiares ao ambiente escolar. Em vez de filtros de banco de dados, 
+a interface utiliza termos como "Monitoramento de Risco", alinhando o sistema com o modelo mental do 
+gestor e facilitando o aprendizado rápido da ferramenta\cite{ribeiro, nielsen}.
+
+\begin{figure}[ht]
+\centering
+\caption{Interface evoluída com Dashboard de insights e alertas visuais.}
+\includegraphics[width=.7\textwidth]{tela_final.png}
+\end{figure}
 
 \end{document}
