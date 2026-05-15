@@ -35,19 +35,41 @@
 
 O monitoramento da frequência estudantil é um dos pilares para a mitigação da evasão escolar e para o suporte pedagógico preventivo. 
 Entretanto, sistemas de gestão acadêmica consolidados, como o SIGAA (Sistema Integrado de Gestão de Atividades Acadêmicas), 
-frequentemente priorizam a funcionalidade de registro em detrimento da visualização analítica dos dados. Para o gestor escolar, 
-o acesso a tabelas brutas sem o devido processamento de informações gera uma alta carga cognitiva, 
-dificultando a identificação de padrões de absenteísmo que ex//igem intervenção imediata.
+frequentemente priorizam a funcionalidade de registro em detrimento da visualização analítica dos dados.
+Para o gestor escolar, o acesso a tabelas brutas sem o devido processamento de informações gera uma alta carga cognitiva, 
+dificultando a identificação de padrões de absenteísmo que exigem intervenção imediata.
 
 A usabilidade de um Ambiente Virtual de Aprendizagem (AVA) ou de um sistema de gestão não deve ser vista apenas como um atributo estético, 
-mas como uma ferramenta de eficiência operacional. Conforme apontado por Antonino e Freire (2017), 
-falhas na interface e na forma como o sistema auxilia o usuário na correção e interpretação de dados podem comprometer a eficácia do processo de gestão. 
+mas como uma ferramenta de eficiência operacional. Conforme apontado por \cite{antonino}, falhas na interface e na forma como o 
+sistema auxilia o usuário na correção e interpretação de dados podem comprometer a eficácia do processo de gestão. 
 Diante desse cenário, surge a necessidade de interfaces que não apenas armazenem dados, mas que os transformem em conhecimento estratégico.
 
 Este artigo descreve o desenvolvimento e a avaliação de usabilidade do sistema "Gestão de Frequência", 
 uma plataforma web projetada para o monitoramento inteligente de faltas. O objetivo central deste trabalho é 
-demonstrar como a aplicação das 10 Heurísticas de Nielsen pode evoluir uma interface puramente funcional para um dashboard de 
-gestão diagnóstica. Através de um design minimalista e focado no usuário, o sistema busca responder a questões críticas para a gestão escolar: 
-quais alunos estão em risco, em quais disciplinas as faltas se concentram e quais dias da semana apresentam maior índice de evasão.
+demonstrar como a aplicação das 10 Heurísticas de Nielsen pode evoluir uma interface puramente funcional para um 
+dashboard de gestão diagnóstica. Através de um design minimalista e focado no usuário, o sistema busca responder a questões 
+críticas para a gestão escolar: quais alunos estão em risco, em quais disciplinas as faltas se concentram e quais dias da 
+semana apresentam maior índice de evasão.
+
+\section{Metodologia}
+
+A metodologia adotada para o desenvolvimento e avaliação do sistema "Gestão de Frequência" fundamenta-se no design iterativo e na avaliação heurística. 
+O processo foi dividido em três fases principais: levantamento de requisitos e prototipagem funcional, aplicação de diretrizes de usabilidade e, 
+por fim, a análise comparativa baseada nos princípios de Nielsen.
+
+Inicialmente, foi desenvolvido um protótipo funcional utilizando tecnologias padrão da Web (HTML5, CSS3 e JavaScript). 
+Esta versão inicial, denominada \textit{baseline}, teve como foco apenas a persistência de dados e o cumprimento da lógica básica de registro de faltas.
+Esta etapa foi essencial para identificar as dificuldades de interação e as lacunas na apresentação de dados, 
+simulando a experiência limitada encontrada em sistemas acadêmicos tradicionais\cite{winckler}.
+
+Na segunda fase, utilizou-se o método de avaliação heurística para diagnosticar problemas de interface. 
+Esta técnica baseia-se na inspeção de conformidade de um produto de software com critérios pré-estabelecidos 
+para encontrar e corrigir problemas de interação\cite{rocha}. Foram selecionadas as 10 Heurísticas de Nielsen 
+como guia para a reestruturação do sistema, focando especialmente em reduzir a carga cognitiva do gestor ao interpretar padrões de absenteísmo.
+
+A implementação final foi hospedada na plataforma GitHub Pages para garantir a acessibilidade e testagem em ambiente online. 
+A avaliação do produto final consistiu em confrontar as funcionalidades implementadas (como o dashboard de estatísticas e 
+as notificações de status) com as heurísticas selecionadas, documentando as melhorias em relação ao protótipo inicial. 
+Esta abordagem centrou-se na visão do usuário gestor, buscando alinhar a interface com suas necessidades reais de monitoramento\cite{rocha}.
 
 \end{document}
