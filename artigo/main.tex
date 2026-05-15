@@ -72,4 +72,34 @@ A avaliação do produto final consistiu em confrontar as funcionalidades implem
 as notificações de status) com as heurísticas selecionadas, documentando as melhorias em relação ao protótipo inicial. 
 Esta abordagem centrou-se na visão do usuário gestor, buscando alinhar a interface com suas necessidades reais de monitoramento\cite{rocha}.
 
+\section{Protótipo Inicial (Baseline)}
+
+A primeira iteração do sistema "Gestão de Frequência" foi desenvolvida com o intuito de estabelecer uma base funcional 
+para o registro de frequências. Esta versão, denominada \textit{baseline}, focou estritamente na persistência de dados brutos, 
+apresentando uma interface minimalista, porém desprovida de inteligência de dados ou refinamentos de usabilidade.
+
+A interface inicial (Figura 1) consistia em um formulário simples para entrada do nome do aluno e um contador numérico de faltas. 
+Embora o sistema cumprisse o requisito técnico de armazenar a informação, a análise diagnóstica revelou lacunas críticas de interação:
+
+\begin{itemize}
+    \item \textbf{Carga Cognitiva Elevada}: Para identificar qual aluno possuía o maior número de faltas, 
+    o gestor era obrigado a realizar uma varredura visual completa em toda a tabela, processando os dados mentalmente sem auxílio do sistema.
+    \item \textbf{Ausência de Contexto Temporal e Disciplinar}: As faltas eram registradas como um valor escalar acumulado. 
+    Não havia distinção de data ou disciplina, impossibilitando a identificação de padrões como o absenteísmo em dias específicos da semana ou em matérias isoladas.
+    \item \textbf{Inexistência de Feedback e Prevenção de Erros}: Ações como a remoção de um registro eram executadas de forma instantânea. 
+    A ausência de diálogos de confirmação ou mensagens de status deixava o usuário vulnerável a ações acidentais e destrutivas, um problema de usabilidade 
+    frequentemente citado na literatura de interfaces educacionais.
+\end{itemize}
+
+% Local reservado para a imagem do protótipo inicial
+\begin{figure}[ht]
+\centering
+\caption{Interface inicial sem aplicação de heurísticas.}
+\includegraphics[width=.7\textwidth]{tela_inicial.png}
+\end{figure}
+
+Esta versão inicial serviu como prova de conceito de que a funcionalidade isolada não é suficiente para uma gestão eficiente. 
+A falta de usabilidade neste estágio confirmou que sistemas que não auxiliam o usuário na interpretação de problemas de interação e 
+dados acabam por dificultar o alcance dos objetivos pedagógicos.
+
 \end{document}
